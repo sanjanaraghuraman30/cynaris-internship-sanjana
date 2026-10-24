@@ -1,0 +1,90 @@
+
+dataContractSpecification: 0.9.3
+
+id: bank-marketing-v1
+
+info:
+  title: Bank Marketing Data Contract
+  description: Data quality agreement for the Bank Marketing dataset
+  owner: data-engineering
+  producer: Sanjana
+  consumer: BI dashboard
+  version: 1.0.0
+  sla: "Dataset must be validated before dashboard refresh"
+
+models:
+  bank_marketing:
+    description: Marketing campaign and customer outcome data
+    fields:
+      age:
+        type: integer
+        required: true
+        minimum: 18
+        maximum: 100
+        classification: internal
+
+      job:
+        type: string
+        required: true
+        classification: internal
+
+      marital:
+        type: string
+        required: true
+        allowed_values:
+          - married
+          - single
+          - divorced
+          - unknown
+        classification: internal
+
+      contact:
+        type: string
+        required: true
+        allowed_values:
+          - cellular
+          - telephone
+          - unknown
+        classification: internal
+
+      duration:
+        type: integer
+        required: true
+        minimum: 0
+        classification: internal
+
+      housing:
+        type: string
+        required: true
+        allowed_values:
+          - yes
+          - no
+          - unknown
+        classification: internal
+
+      y:
+        type: string
+        required: true
+        allowed_values:
+          - yes
+          - no
+        classification: internal
+
+quality_rules:
+  minimum_row_count: 1
+  maximum_row_count: 100000
+  reject_invalid_age: true
+  reject_missing_age: true
+  reject_invalid_subscription_outcome: true
+
+privacy:
+  pii_columns: []
+  note: >
+    The listed dataset columns do not include direct identifiers such as
+    customer name, email address, phone number, or PAN. Reassess indirect
+    identification risk before sharing data externally.
+  handling:
+    - Restrict access to authorised users
+    - Use aggregated results for dashboards where possible
+    - Avoid publishing row-level customer records
+

@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bank Marketing Data Quality Report</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 40px; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+th { background: #f2f2f2; }
+</style>
+</head>
+<body>
+<h1>Bank Marketing Data Quality Report</h1>
+<p>Generated: 2026-10-24 14:10:33</p>
+<p>Dataset: Bank Marketing (test copy with 3 intentional errors)</p>
+<p>Total checks: 8</p>
+<p>Passed: 5</p>
+<p>Failed: 3</p>
+<table>
+<tr><th>Expectation</th><th>Status</th></tr>
+<tr><td>expect_table_row_count_to_be_between</td><td>PASS</td></tr>
+<tr><td>expect_column_values_to_not_be_null</td><td>FAIL</td></tr>
+<tr><td>expect_column_values_to_be_between</td><td>FAIL</td></tr>
+<tr><td>expect_column_values_to_be_between</td><td>PASS</td></tr>
+<tr><td>expect_column_values_to_be_in_set</td><td>FAIL</td></tr>
+<tr><td>expect_column_values_to_match_regex</td><td>PASS</td></tr>
+<tr><td>expect_column_values_to_be_in_set</td><td>PASS</td></tr>
+<tr><td>expect_column_values_to_be_in_set</td><td>PASS</td></tr>
+
+</table>
+</body>
+</html>
